@@ -1,0 +1,17 @@
+# user inputs richter magnitude
+RichterScale = input('Input Richter Magnitude:')
+# makes the input a floating point number greater than or equal to zero
+# ^^ negatives and non numeric characters will result in an error
+if float(RichterScale) >= 0:
+    # richter equation: 10^((1.5 x richter)+4.8)
+    energy = 10 ** (1.5 * float(RichterScale) + 4.8)
+    # One ton of exploded TNT yields 4.184x10^9 joules
+    # the 4.184x10^9 is a scientific notation which is equal to 4184000000
+    equivalent_yield = (energy/4184000000)
+    # Printing the final values
+    # Prints the original richter value that was inputted
+    print('Richter:', RichterScale)
+    # Prints the energy released in joules
+    print('Joules:', energy)
+    # Prints the equivalent tnt energy yield
+    print('TNT:', equivalent_yield)
